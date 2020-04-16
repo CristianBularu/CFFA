@@ -1,0 +1,8 @@
+C:\Users\Dev\Desktop\CFFA\Algorithm\bin\Release\netstandard2.0\Algorithm.deps.json
+C:\Users\Dev\Desktop\CFFA\Algorithm\bin\Release\netstandard2.0\Algorithm.dll
+C:\Users\Dev\Desktop\CFFA\Algorithm\bin\Release\netstandard2.0\Algorithm.pdb
+C:\Users\Dev\Desktop\CFFA\Algorithm\obj\Release\netstandard2.0\Algorithm.csprojAssemblyReference.cache
+C:\Users\Dev\Desktop\CFFA\Algorithm\obj\Release\netstandard2.0\Algorithm.AssemblyInfoInputs.cache
+C:\Users\Dev\Desktop\CFFA\Algorithm\obj\Release\netstandard2.0\Algorithm.AssemblyInfo.cs
+C:\Users\Dev\Desktop\CFFA\Algorithm\obj\Release\netstandard2.0\Algorithm.dll
+C:\Users\Dev\Desktop\CFFA\Algorithm\obj\Release\netstandard2.0\Algorithm.pdb

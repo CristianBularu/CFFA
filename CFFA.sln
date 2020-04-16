@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CFFA_API", "CFFA_API\CFFA_API.csproj", "{6E4680D9-3B30-450E-B014-E5BE8DFE1A8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{53E460BB-281F-46AB-980B-290B9BBD9165}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E4680D9-3B30-450E-B014-E5BE8DFE1A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4680D9-3B30-450E-B014-E5BE8DFE1A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4680D9-3B30-450E-B014-E5BE8DFE1A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4680D9-3B30-450E-B014-E5BE8DFE1A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E460BB-281F-46AB-980B-290B9BBD9165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E460BB-281F-46AB-980B-290B9BBD9165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E460BB-281F-46AB-980B-290B9BBD9165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E460BB-281F-46AB-980B-290B9BBD9165}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4159E2D0-26B0-4D26-BB9A-4E6323E95779}
+	EndGlobalSection
+EndGlobal
