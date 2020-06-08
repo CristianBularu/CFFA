@@ -9,9 +9,9 @@ namespace CFFA_API.Models.ViewModels
     {
         public long Id { get; set; }
         public string UserId { get; set; }
-        public string Title { get; set; }
+        //public string Title { get; set; }
         public string Extension { get; set; }
-        public int PageCount { get; set; }
-        public float PageHeight { get; set; }
+        //public int PageCount { get; set; }
+        //public float PageHeight { get; set; }
     }
 }

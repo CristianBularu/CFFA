@@ -16,10 +16,10 @@ namespace CFFA_API.Logic.Helpers
             {
                 Id = viewModel.Id ?? -1,
                 UserId = viewModel.UserId,
-                Title = viewModel.Title,
+                //Title = viewModel.Title,
                 Extension = viewModel.Extension,
-                PageCount = viewModel.PageCount??0,
-                PageHeight = viewModel.PageHeight??0
+                //PageCount = viewModel.PageCount??0,
+                //PageHeight = viewModel.PageHeight??0
             };
             return sketch;
         }
@@ -30,10 +30,10 @@ namespace CFFA_API.Logic.Helpers
             {
                 Id = sketch.Id,
                 UserId = sketch.UserId,
-                Title = sketch.Title,
+                //Title = sketch.Title,
                 Extension = sketch.Extension,
-                PageCount = sketch.PageCount,
-                PageHeight = sketch.PageHeight
+                //PageCount = sketch.PageCount,
+                //PageHeight = sketch.PageHeight
             };
             return viewModel;
         }
@@ -44,10 +44,10 @@ namespace CFFA_API.Logic.Helpers
             {
                 Id = viewModel.Id,
                 UserId = viewModel.UserId,
-                Title = viewModel.Title,
+                //Title = viewModel.Title,
                 Extension = viewModel.Extension,
-                PageCount = viewModel.PageCount,
-                PageHeight = viewModel.PageHeight
+                //PageCount = viewModel.PageCount,
+                //PageHeight = viewModel.PageHeight
                 
             };
             return sketch;
@@ -59,10 +59,10 @@ namespace CFFA_API.Logic.Helpers
             {
                 Id = sketch.Id,
                 UserId = sketch.UserId,
-                Title = sketch.Title,
+                //Title = sketch.Title,
                 Extension = sketch.Extension,
-                PageCount = sketch.PageCount,
-                PageHeight = sketch.PageHeight
+                //PageCount = sketch.PageCount,
+                //PageHeight = sketch.PageHeight
             };
             return viewModel;
         }

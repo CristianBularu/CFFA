@@ -1348,11 +1348,11 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "NLog/4.6.7": {
+      "NLog/4.7.2": {
         "runtime": {
           "lib/netstandard2.0/NLog.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.7.10445"
+            "fileVersion": "4.7.2.11786"
           }
         },
         "compile": {
@@ -1362,7 +1362,7 @@
       "NLog.Extensions.Logging/1.6.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "3.1.2",
-          "NLog": "4.6.7"
+          "NLog": "4.7.2"
         },
         "runtime": {
           "lib/netcoreapp3.0/NLog.Extensions.Logging.dll": {
@@ -1502,6 +1502,48 @@
         },
         "compile": {
           "lib/net40/Swashbuckle.Core.dll": {}
+        }
+      },
+      "Syncfusion.Compression.Net.Core/18.1.0.54": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "18.1200.0.54",
+            "fileVersion": "18.1200.0.54"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/18.1.0.54": {
+        "runtime": {
+          "lib/netcoreapp3.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "18.1.0.54",
+            "fileVersion": "18.1.0.54"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/18.1.0.54": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Syncfusion.Compression.Net.Core": "18.1.0.54",
+          "Syncfusion.Licensing": "18.1.0.54",
+          "System.Text.Encoding.CodePages": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "18.1200.0.54",
+            "fileVersion": "18.1200.0.54"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -2274,6 +2316,8 @@
       },
       "Algorithm/1.0.0": {
         "dependencies": {
+          "NLog": "4.7.2",
+          "Syncfusion.Pdf.Net.Core": "18.1.0.54",
           "System.Drawing.Common": "4.7.0"
         },
         "runtime": {
@@ -4377,12 +4421,12 @@
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
-    "NLog/4.6.7": {
+    "NLog/4.7.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xSIzXrIF89Ww6yoJPvyBcu4JLgNiDiEaTT4GyVltZEeVIvkgSm9J/srUy1Yz0EXwbTv502l8knoCFrgNc/MUMA==",
-      "path": "nlog/4.6.7",
-      "hashPath": "nlog.4.6.7.nupkg.sha512"
+      "sha512": "sha512-tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
+      "path": "nlog/4.7.2",
+      "hashPath": "nlog.4.7.2.nupkg.sha512"
     },
     "NLog.Extensions.Logging/1.6.0": {
       "type": "package",
@@ -4474,6 +4518,27 @@
       "sha512": "sha512-GhVWgtB8hCOxQhx7zLiiRyoi6flm7fNDDGILYHWktxLMkykRUz90fhmLRZECmnbvCcepFyROiw3phS1XorhdDg==",
       "path": "swashbuckle.core/5.6.0",
       "hashPath": "swashbuckle.core.5.6.0.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/18.1.0.54": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6a6iGECRNxWB08OC1v77vnCNiah4+Jsq8Yo5x2w/BMmYFaQCmZfR9tgGceRT79A35g5Gmk+42g6FyAdj+NhoWg==",
+      "path": "syncfusion.compression.net.core/18.1.0.54",
+      "hashPath": "syncfusion.compression.net.core.18.1.0.54.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/18.1.0.54": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oIPt2jg/QtRigkWiYv4X9tB8//ov5xpO1P452RdO4r/3c8wBHZr97rbmGWxt/JwnARU3Rwfq19OeZ0jaOZpGAA==",
+      "path": "syncfusion.licensing/18.1.0.54",
+      "hashPath": "syncfusion.licensing.18.1.0.54.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/18.1.0.54": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8zCK6WDp+lS3PxNCIU+VSEM5lD1DDBtb+STKQM5GKZGzgCT02hfFRpBI1EeNsji0aQib8WFklXh5Sw7XzubXAA==",
+      "path": "syncfusion.pdf.net.core/18.1.0.54",
+      "hashPath": "syncfusion.pdf.net.core.18.1.0.54.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj": {}
+    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj": {
+    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
         "projectName": "Algorithm",
-        "projectPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\obj\\",
+        "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.2, )"
+            },
+            "Syncfusion.Pdf.Net.Core": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

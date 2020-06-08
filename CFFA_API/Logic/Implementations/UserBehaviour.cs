@@ -126,6 +126,17 @@ namespace CFFA_API.Logic.Implementations
             return userRepository.Disable(userId);
         }
 
+        public List<ProfileViewModel> Search(string like, int page)
+        {
+            var users = userRepository.Search(like, page, UserPostsPageSize).ToList();
+            var result = new List<ProfileViewModel>();
+            foreach(ApplicationUser user in users)
+            {
+                result.Add(user.AsProfileViewModel());
+            }
+            return result;
+        }
+
         public CustomTokenState VerifyCustomToken(string probe, string userId, TokenType type)
         {
             var tokens = userRepository.GetGenerateUserCustomTokens(userId);
@@ -143,29 +154,6 @@ namespace CFFA_API.Logic.Implementations
             return returnTokenState;
         }
 
-        public void ClearTokenNoUpdate(CustomTokens tokens)
-        {
-            tokens.ConfirmationTokenAttempts = 0;
-            tokens.ConfirmationTokenValue = "Empty";
-            tokens.ResetPasswordAttempts = 0;
-            tokens.ResetPasswordTokenValue = "Empty";
-        }
-
-        public void GenerateConfirmationTokenNoUpdate(CustomTokens tokens)
-        {
-            GenerateCustomConfirmationToken(tokens);
-        }
-
-        public List<ProfileViewModel> Search(string like, int page)
-        {
-            var users = userRepository.Search(like, page, UserPostsPageSize).ToList();
-            var result = new List<ProfileViewModel>();
-            foreach(ApplicationUser user in users)
-            {
-                result.Add(user.AsProfileViewModel());
-            }
-            return result;
-        }
 
         private CustomTokenState VerifyConfirmationToken(string probe, CustomTokens tokens)
         {
@@ -248,7 +236,20 @@ namespace CFFA_API.Logic.Implementations
             }
         }
 
-        public CustomTokens GenerateCustomToken(string userId, TokenType type, CustomTokensDecorator additional = null)
+        public void ClearTokenNoUpdate(CustomTokens tokens) //1
+        {
+            tokens.ConfirmationTokenAttempts = 0;
+            tokens.ConfirmationTokenValue = "Empty";
+            tokens.ResetPasswordAttempts = 0;
+            tokens.ResetPasswordTokenValue = "Empty";
+        }
+
+        public void GenerateConfirmationTokenNoUpdate(CustomTokens tokens)//1
+        {
+            GenerateCustomConfirmationToken(tokens);
+        }
+
+        public CustomTokens GenerateCustomToken(string userId, TokenType type, CustomTokensDecorator additional = null)//1 + 1
         {
             var tokens = userRepository.GetGenerateUserCustomTokens(userId);
             if (type == TokenType.Confirmation)
@@ -266,7 +267,7 @@ namespace CFFA_API.Logic.Implementations
             return tokens;
         }
 
-        private void GenerateCustomConfirmationToken(CustomTokens tokens)
+        private void GenerateCustomConfirmationToken(CustomTokens tokens)//1 + 1
         {
             tokens.ConfirmationTokenAttempts = 0;
             tokens.ConfirmationTokenCreationTime = DateTime.UtcNow;

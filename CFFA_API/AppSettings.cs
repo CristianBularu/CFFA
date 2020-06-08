@@ -18,5 +18,6 @@ namespace CFFA_API
         public static string Audition { get => "Dasda"; }
         public static string EmailSenderAddress;
         public static string EmailSenderPassword;
+        public static string SQLConnectionString;
     }
 }

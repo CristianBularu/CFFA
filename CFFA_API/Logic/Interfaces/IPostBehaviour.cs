@@ -13,6 +13,7 @@ namespace CFFA_API.Logic.Interfaces
         long Create(CreateUpdatePostViewModel model);
         bool Update(CreateUpdatePostViewModel model);
         SketchViewModel CreateSketch(Sketch sketch);
+        string TryCopyOfSketch(long sketchId, int leafs, float height);
         //bool RemoveSketch(Sketch sketch);
         //(int Up, int Down) Votes(long postId);
         //bool HasFavorite(string userId, long postId);

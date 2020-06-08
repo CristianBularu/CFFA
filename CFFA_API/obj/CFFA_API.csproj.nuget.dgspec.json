@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\CFFA_API.csproj": {}
+    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj": {
+    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
         "projectName": "Algorithm",
-        "projectPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\obj\\",
+        "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -47,6 +47,14 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.2, )"
+            },
+            "Syncfusion.Pdf.Net.Core": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -66,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\CFFA_API.csproj": {
+    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\CFFA_API.csproj",
+        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj",
         "projectName": "CFFA_API",
-        "projectPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\CFFA_API.csproj",
+        "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\obj\\",
+        "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -92,8 +100,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj": {
-                "projectPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj"
+              "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
+                "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj"
               }
             }
           }

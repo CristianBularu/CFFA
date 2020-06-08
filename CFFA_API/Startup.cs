@@ -1,4 +1,6 @@
+using Algorithm;
 using CFFA_API.Controllers.Helpers;
+using CFFA_API.Controllers.Helpers.EmailSender;
 using CFFA_API.Logic.Implementations;
 using CFFA_API.Logic.Interfaces;
 using CFFA_API.Models;
@@ -24,9 +26,10 @@ namespace CFFA_API
         {
 
             Configuration = configuration;
-            AppSettings.Secret = configuration.GetSection("Secret").Value;
-            AppSettings.EmailSenderAddress = configuration.GetSection("EmailSenderAddress").Value;
-            AppSettings.EmailSenderPassword = configuration.GetSection("EmailSenderPassword").Value;
+            AppSettings.Secret = Configuration["AppSettings:Secret"];
+            AppSettings.EmailSenderAddress = Configuration["AppSettings:EmailSenderAddress"];
+            AppSettings.EmailSenderPassword = Configuration["AppSettings:EmailSenderPassword"];
+            AppSettings.SQLConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
         }
 
         public IConfiguration Configuration { get; }
@@ -41,7 +44,7 @@ namespace CFFA_API
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseLazyLoadingProxies().UseSqlServer(AppSettings.SQLConnectionString));//toDo: APPSETTINGS
             services.AddDbContext<DbContext, ApplicationDbContext>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -59,6 +62,8 @@ namespace CFFA_API
             services.AddTransient<IUserBehaviour, UserBehaviour>();
 
             services.AddTransient<IPhotoManager, PhotoManager>();
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IUsage, Usage>();
 
             //TODO: add dependencyies
             //services.AddCors(options =>
@@ -117,7 +122,7 @@ namespace CFFA_API
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "CHO CHO, Patzanu",
+                    Title = "API",
                     Version = "v1"
                 });
             });

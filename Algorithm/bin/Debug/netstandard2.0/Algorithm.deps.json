@@ -10,6 +10,8 @@
       "Algorithm/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
+          "NLog": "4.7.2",
+          "Syncfusion.Pdf.Net.Core": "18.1.0.54",
           "System.Drawing.Common": "4.7.0"
         },
         "runtime": {
@@ -22,11 +24,60 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
+      "NLog/4.7.2": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2.11786"
+          }
+        }
+      },
+      "Syncfusion.Compression.Net.Core/18.1.0.54": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "18.1200.0.54",
+            "fileVersion": "18.1200.0.54"
+          }
+        }
+      },
+      "Syncfusion.Licensing/18.1.0.54": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "18.1.0.54",
+            "fileVersion": "18.1.0.54"
+          }
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/18.1.0.54": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Syncfusion.Compression.Net.Core": "18.1.0.54",
+          "Syncfusion.Licensing": "18.1.0.54",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "18.1200.0.54",
+            "fileVersion": "18.1200.0.54"
+          }
+        }
+      },
       "System.Drawing.Common/4.7.0": {
         "runtime": {
           "lib/netstandard2.0/System.Drawing.Common.dll": {
             "assemblyVersion": "4.0.0.1",
             "fileVersion": "4.6.26919.2"
+          }
+        }
+      },
+      "System.Text.Encoding.CodePages/4.4.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.6.25519.3"
           }
         }
       }
@@ -52,12 +103,47 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "NLog/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
+      "path": "nlog/4.7.2",
+      "hashPath": "nlog.4.7.2.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/18.1.0.54": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6a6iGECRNxWB08OC1v77vnCNiah4+Jsq8Yo5x2w/BMmYFaQCmZfR9tgGceRT79A35g5Gmk+42g6FyAdj+NhoWg==",
+      "path": "syncfusion.compression.net.core/18.1.0.54",
+      "hashPath": "syncfusion.compression.net.core.18.1.0.54.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/18.1.0.54": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oIPt2jg/QtRigkWiYv4X9tB8//ov5xpO1P452RdO4r/3c8wBHZr97rbmGWxt/JwnARU3Rwfq19OeZ0jaOZpGAA==",
+      "path": "syncfusion.licensing/18.1.0.54",
+      "hashPath": "syncfusion.licensing.18.1.0.54.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/18.1.0.54": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8zCK6WDp+lS3PxNCIU+VSEM5lD1DDBtb+STKQM5GKZGzgCT02hfFRpBI1EeNsji0aQib8WFklXh5Sw7XzubXAA==",
+      "path": "syncfusion.pdf.net.core/18.1.0.54",
+      "hashPath": "syncfusion.pdf.net.core.18.1.0.54.nupkg.sha512"
+    },
     "System.Drawing.Common/4.7.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
       "path": "system.drawing.common/4.7.0",
       "hashPath": "system.drawing.common.4.7.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6JX7ZdaceBiLKLkYt8zJcp4xTJd1uYyXXEkPw6mnlUIjh1gZPIVKPtRXPmY5kLf6DwZmf5YLwR3QUrRonl7l0A==",
+      "path": "system.text.encoding.codepages/4.4.0",
+      "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
     }
   }
 }

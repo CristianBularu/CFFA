@@ -1191,7 +1191,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "NLog/4.6.7": {
+      "NLog/4.7.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {}
@@ -1353,6 +1353,42 @@
         },
         "runtime": {
           "lib/net40/Swashbuckle.Core.dll": {}
+        }
+      },
+      "Syncfusion.Compression.Net.Core/18.1.0.54": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/18.1.0.54": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/18.1.0.54": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Syncfusion.Compression.Net.Core": "18.1.0.54",
+          "Syncfusion.Licensing": "18.1.0.54",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -2537,6 +2573,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "NLog": "4.7.2",
+          "Syncfusion.Pdf.Net.Core": "18.1.0.54",
           "System.Drawing.Common": "4.7.0"
         },
         "compile": {
@@ -4609,10 +4647,10 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "NLog/4.6.7": {
-      "sha512": "xSIzXrIF89Ww6yoJPvyBcu4JLgNiDiEaTT4GyVltZEeVIvkgSm9J/srUy1Yz0EXwbTv502l8knoCFrgNc/MUMA==",
+    "NLog/4.7.2": {
+      "sha512": "tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
       "type": "package",
-      "path": "nlog/4.6.7",
+      "path": "nlog/4.7.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4638,7 +4676,7 @@
         "lib/wp8/NLog.xml",
         "lib/xamarinios10/NLog.dll",
         "lib/xamarinios10/NLog.xml",
-        "nlog.4.6.7.nupkg.sha512",
+        "nlog.4.7.2.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
@@ -4842,6 +4880,67 @@
         "lib/net40/Swashbuckle.Core.dll",
         "swashbuckle.core.5.6.0.nupkg.sha512",
         "swashbuckle.core.nuspec"
+      ]
+    },
+    "Syncfusion.Compression.Net.Core/18.1.0.54": {
+      "sha512": "6a6iGECRNxWB08OC1v77vnCNiah4+Jsq8Yo5x2w/BMmYFaQCmZfR9tgGceRT79A35g5Gmk+42g6FyAdj+NhoWg==",
+      "type": "package",
+      "path": "syncfusion.compression.net.core/18.1.0.54",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.2/Syncfusion.Compression.Portable.dll",
+        "lib/netstandard1.2/Syncfusion.Compression.Portable.xml",
+        "lib/netstandard1.4/Syncfusion.Compression.Portable.dll",
+        "lib/netstandard1.4/Syncfusion.Compression.Portable.xml",
+        "lib/netstandard2.0/Syncfusion.Compression.Portable.dll",
+        "lib/netstandard2.0/Syncfusion.Compression.Portable.xml",
+        "syncfusion.compression.net.core.18.1.0.54.nupkg.sha512",
+        "syncfusion.compression.net.core.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/18.1.0.54": {
+      "sha512": "oIPt2jg/QtRigkWiYv4X9tB8//ov5xpO1P452RdO4r/3c8wBHZr97rbmGWxt/JwnARU3Rwfq19OeZ0jaOZpGAA==",
+      "type": "package",
+      "path": "syncfusion.licensing/18.1.0.54",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.18.1.0.54.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Pdf.Net.Core/18.1.0.54": {
+      "sha512": "8zCK6WDp+lS3PxNCIU+VSEM5lD1DDBtb+STKQM5GKZGzgCT02hfFRpBI1EeNsji0aQib8WFklXh5Sw7XzubXAA==",
+      "type": "package",
+      "path": "syncfusion.pdf.net.core/18.1.0.54",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.2/Syncfusion.Pdf.Portable.dll",
+        "lib/netstandard1.2/Syncfusion.Pdf.Portable.xml",
+        "lib/netstandard1.4/Syncfusion.Pdf.Portable.dll",
+        "lib/netstandard1.4/Syncfusion.Pdf.Portable.xml",
+        "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll",
+        "lib/netstandard2.0/Syncfusion.Pdf.Portable.xml",
+        "syncfusion.pdf.net.core.18.1.0.54.nupkg.sha512",
+        "syncfusion.pdf.net.core.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -8432,11 +8531,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\CFFA_API.csproj",
+      "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj",
       "projectName": "CFFA_API",
-      "projectPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\CFFA_API.csproj",
+      "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj",
       "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\CFFA_API\\obj\\",
+      "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8455,8 +8554,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj": {
-              "projectPath": "C:\\Users\\Dev\\Desktop\\New folder\\CFFA\\Algorithm\\Algorithm.csproj"
+            "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
+              "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj"
             }
           }
         }

@@ -5,11 +5,11 @@ namespace Algorithm
 {
     class Mat
     {
-        public static int[,] mat;
+        public int[,] mat;
         public int width;
         public int height;
 
-        public Mat(Bitmap bm)
+        public Mat(Bitmap bm)//1 layer only
         {
             mat = new int[bm.Height, bm.Width];
             width = bm.Width;
@@ -27,28 +27,6 @@ namespace Algorithm
                         mat[i, j] = 1;
                     }
                 }
-            Transp();
-        }
-
-        public int[,] matref()
-        {
-            return mat;
-        }
-        void Transp()
-        {
-            int[,] inv = new int[width, height];
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    inv[i, j] = mat[j, i];
-                }
-            }
-            mat = inv;
-            int value;
-            value = height;
-            height = width;
-            width = value;
         }
     }
 }

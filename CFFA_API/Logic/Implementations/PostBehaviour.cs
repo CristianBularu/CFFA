@@ -1,15 +1,15 @@
-﻿using CFFA_API.Logic.Interfaces;
+﻿using Algorithm;
+using CFFA_API.Logic.Interfaces;
 using CFFA_API.Models;
 using CFFA_API.Models.ViewModels;
 using CFFA_API.Models.ViewModels.Creational;
 using CFFA_API.Repository.Interfaces;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using static CFFA_API.Logic.Helpers.MapperExtensions;
-using static CFFA_API.Logic.Interfaces.IPostBehaviour;
 
 namespace CFFA_API.Logic.Implementations
 {
@@ -22,12 +22,18 @@ namespace CFFA_API.Logic.Implementations
         private readonly IPostRepository _postRepository;
         private readonly IUserRepository _userRepository;
         private readonly ICommentRepository _commentRepository;
+        private readonly IUsage usage;
+        private readonly IWebHostEnvironment hostEnvironment;
+        private readonly ILogger<PostBehaviour> logger;
 
-        public PostBehaviour(IPostRepository postRepository, IUserRepository userRepository, ICommentRepository commentRepository)
+        public PostBehaviour(IPostRepository postRepository, IUserRepository userRepository, ICommentRepository commentRepository, IUsage usage, IWebHostEnvironment hostEnvironment, ILogger<PostBehaviour> logger)
         {
             _postRepository = postRepository;
             _userRepository = userRepository;
             _commentRepository = commentRepository;
+            this.usage = usage;
+            this.hostEnvironment = hostEnvironment;
+            this.logger = logger;
         }
 
         public HomeThreadsViewModel GetPostsByThreads(string userId)
@@ -278,6 +284,14 @@ namespace CFFA_API.Logic.Implementations
             return _postRepository.CreateSketch(sketch).AsSketchViewModel();
         }
 
+        public string TryCopyOfSketch(long sketchId, int leafs, float height)
+        {
+            var sketch = _postRepository.GetSketch(sketchId);
+            logger.LogDebug($"Sketch exists: {sketch!=null}");
+            if (sketch == null)
+                return null;
+            return usage.Generate(hostEnvironment.WebRootPath, sketch.Id, sketch.Extension, leafs, height);
+        }
 
         private PostFullViewModel appendDataTo(Post post, ApplicationUser viewer)
         {

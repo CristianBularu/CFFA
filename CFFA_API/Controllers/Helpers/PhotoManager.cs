@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,10 +22,12 @@ namespace CFFA_API.Controllers.Helpers
         private static int smallSize = 100;
         private static int mediumSize = 500;
         private readonly IWebHostEnvironment hostEnvironment;
+        private readonly ILogger logger;
 
-        public PhotoManager(IWebHostEnvironment hostEnvironment)
+        public PhotoManager(IWebHostEnvironment hostEnvironment, ILogger<PhotoManager> logger)
         {
             this.hostEnvironment = hostEnvironment;
+            this.logger = logger;
         }
 
         public async Task<string> SaveProfilePhoto(string userId, IFormFile file)
@@ -97,9 +98,7 @@ namespace CFFA_API.Controllers.Helpers
             }
             catch (Exception ex)
             {
-                var logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
-                logger.Error(ex, "PhotoManager");
-                NLog.LogManager.Shutdown();
+                logger.LogError(ex.Message);
                 return null;
             }
         }

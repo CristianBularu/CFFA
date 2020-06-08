@@ -15,12 +15,12 @@ namespace CFFA_API.Models.ViewModels.Creational
         public string Extension;
 
         public long? Id { get; set; }
-        [Required]
-        public string Title { get; set; }
-        [Required]
-        public int? PageCount { get; set; }
-        [Required]
-        public float? PageHeight { get; set; }
+        //[Required]
+        //public string Title { get; set; }
+        //[Required]
+        //public int? PageCount { get; set; }
+        //[Required]
+        //public float? PageHeight { get; set; }
         [Required]
         public IFormFile File { get; set; }
     }

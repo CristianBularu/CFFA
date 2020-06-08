@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CFFA_API", "CFFA_API\CFFA_API.csproj", "{6E4680D9-3B30-450E-B014-E5BE8DFE1A8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{53E460BB-281F-46AB-980B-290B9BBD9165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm", "Algorithm\Algorithm.csproj", "{53E460BB-281F-46AB-980B-290B9BBD9165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

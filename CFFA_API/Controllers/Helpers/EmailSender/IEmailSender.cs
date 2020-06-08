@@ -9,7 +9,7 @@ namespace CFFA_API.Controllers.Helpers.EmailSender
     {
         //Task SendEmailAsync(string email, string subject, string message);
 
-        void SendEmailConfirmationTokenMessage(string receiver, string token);
-        void SendPasswordResetTokenMessage(string receiver, string token);
+        Task SendEmailConfirmationTokenMessage(string receiver, string token);
+        Task SendPasswordResetTokenMessage(string receiver, string token);
     }
 }

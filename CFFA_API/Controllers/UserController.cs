@@ -13,6 +13,7 @@ using CFFA_API.Models.ViewModels.Creational;
 using System.IO;
 using System;
 using CFFA_API.Controllers.Helpers;
+using Microsoft.Extensions.Logging;
 
 namespace CFFA_API.Controllers
 {
@@ -25,13 +26,15 @@ namespace CFFA_API.Controllers
         private readonly IWebHostEnvironment hostEnvironment;
         private readonly IUserBehaviour userBehaviour;
         private readonly IPhotoManager photoManager;
+        private readonly ILogger logger;
 
-        public UserController(UserManager<ApplicationUser> userManager, IWebHostEnvironment hostEnvironment, IUserBehaviour userBehaviour, IPhotoManager photoManager)
+        public UserController(UserManager<ApplicationUser> userManager, IWebHostEnvironment hostEnvironment, IUserBehaviour userBehaviour, IPhotoManager photoManager, ILogger<UserController> logger)
         {
             this.userManager = userManager;
             this.hostEnvironment = hostEnvironment;
             this.userBehaviour = userBehaviour;
             this.photoManager = photoManager;
+            this.logger = logger;
         }
 
         [HttpGet]
@@ -44,7 +47,7 @@ namespace CFFA_API.Controllers
                 applicationUser = await userManager.GetUserAsync(User);
             if(applicationUser?.Id == userId)
                 return RedirectToAction("Profile");
-            return await Validation_ModelState_UserExistance(userId, ModelState, () =>
+            return await Validation_UserExistance_ModelState(userId, ModelState, async () =>
             {
                 var user = userBehaviour.GetVisitProfile(userId, applicationUser?.Id??null, postPage - 1);
                 if (user != null)
@@ -76,7 +79,7 @@ namespace CFFA_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Subscribe(string userId)
         {
-            return await Validation_EmailConfirmation_ModelState_UserExistance(User, userId, ModelState, (user) =>
+            return await Validation_UserExistance_EmailConfirmation_ModelState(User, userId, ModelState, async (user) =>
             {
                 if (userId == user.Id)
                     return Conflict("Can not subscribe to yourself");
@@ -90,7 +93,7 @@ namespace CFFA_API.Controllers
         [HttpGet]
         public async Task<IActionResult> UnSubscribe(string userId)
         {
-            return await Validation_EmailConfirmation_ModelState_UserExistance(User, userId, ModelState, (user) =>
+            return await Validation_UserExistance_EmailConfirmation_ModelState(User, userId, ModelState, async (user) =>
             {
                 userBehaviour.UnSubscribeTo(user.Id, userId);
                 if (userId == user.Id)
@@ -149,45 +152,54 @@ namespace CFFA_API.Controllers
             });
         }
 
-        private delegate Task<IActionResult> ValidationDelegateAsyncBasic(ApplicationUser User);
-        private delegate IActionResult ValidationDelegateAsync(ApplicationUser User);
-        private delegate IActionResult ValidationDelegateAsyncGuest();
-
-        private async Task<IActionResult> Validation_EmailConfirmation_ModelState_UserExistance(ClaimsPrincipal User, string userId, ModelStateDictionary ModelState, ValidationDelegateAsync handler)
+        //Validators with Logging
+        private delegate Task<IActionResult> CodeBlockDelegate();
+        private delegate Task<IActionResult> ValidationDelegate(ApplicationUser User);
+        private async Task<IActionResult> Validation_ModelState_wLog(ModelStateDictionary ModelState, CodeBlockDelegate handler)
         {
-            //var user = await userManager.GetUserAsync(User);
-            //if (!user.EmailConfirmed)
-            //    return Unauthorized("Unconfirmed Email");
-            //if (!ModelState.IsValid)
-            //    return ConflictFromModelState(ModelState);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    return await handler();
+                } catch (Exception ex)
+                {
+                    logger.LogError(ex.Message);
+                }
+            }
+            return ConflictFromModelState(ModelState);
+        }
 
+        private async Task<IActionResult> Validation_EmailConfirmation_ModelState(ClaimsPrincipal User, ModelStateDictionary ModelState, ValidationDelegate handler)
+        {
+            return await Validation_ModelState_wLog(ModelState, async () =>
+            {
+                var user = await userManager.GetUserAsync(User);
+                if (!user.EmailConfirmed)
+                    return Conflict("Unconfirmed Email");
+                return await handler(user);
+            });
+        }
+
+        private async Task<IActionResult> Validation_UserExistance_ModelState(string userId, ModelStateDictionary ModelState, CodeBlockDelegate handler)
+        {
+            return await Validation_ModelState_wLog(ModelState, async () => {
+                if ((await userManager.FindByIdAsync(userId)) == null)
+                    return Conflict("User Not found");
+                return await handler();
+            });
+        }
+
+        private async Task<IActionResult> Validation_UserExistance_EmailConfirmation_ModelState(ClaimsPrincipal User, string userId, ModelStateDictionary ModelState, ValidationDelegate handler)
+        {
             return await Validation_EmailConfirmation_ModelState(User, ModelState, async (user) =>
             {
                 if ((await userManager.FindByIdAsync(userId)) == null)
                     return Conflict("User Not found");
-                return handler(user);
+                return await handler(user);
             });
         }
-
-        private async Task<IActionResult> Validation_ModelState_UserExistance(string userId, ModelStateDictionary ModelState, ValidationDelegateAsyncGuest handler)
-        {
-            if (!ModelState.IsValid)
-                return ConflictFromModelState(ModelState);
-            if ((await userManager.FindByIdAsync(userId)) == null)
-                return Conflict("User Not found");
-            return handler();
-        }
-
-        private async Task<IActionResult> Validation_EmailConfirmation_ModelState(ClaimsPrincipal User, ModelStateDictionary ModelState, ValidationDelegateAsyncBasic handler)
-        {
-            var user = await userManager.GetUserAsync(User);
-            if (!user.EmailConfirmed)
-                return Conflict("Unconfirmed Email");
-            if (!ModelState.IsValid)
-                return ConflictFromModelState(ModelState);
-            return await handler(user);
-        }
-
+        //Error Parsers
         private IActionResult ConflictFromModelState(ModelStateDictionary ModelState)
         {
             string errorMessage = "";

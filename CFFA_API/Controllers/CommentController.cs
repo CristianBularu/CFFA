@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -19,14 +21,16 @@ namespace CFFA_API.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ICommentBehaviour commentBehaviour;
-        //private readonly ILogger _logger;
+        private readonly ILogger<CommentController> logger;
 
         public CommentController(
             UserManager<ApplicationUser> userManager,
-            ICommentBehaviour commentBehaviour)
+            ICommentBehaviour commentBehaviour,
+            ILogger<CommentController> logger)
         {
             this.userManager = userManager;
             this.commentBehaviour = commentBehaviour;
+            this.logger = logger;
         }
 
         [HttpGet]
@@ -34,12 +38,10 @@ namespace CFFA_API.Controllers
         {
             if(page < 1)
                 page = 1;
-            var result = commentBehaviour.GetComments(postId, page - 1);
-            return Ok(result);
-            //return await Validation_EmailConfirmation_ModelState(User, ModelState, (user) => {
-            //    var result = commentBehaviour.GetComments(postId, page-1);
-            //    return Ok(result);
-            //});
+            return await TryCatchLog(async () => { 
+                var result = commentBehaviour.GetComments(postId, page - 1);
+                return Ok(result);
+            });
         }
 
         [Authorize]
@@ -105,26 +107,43 @@ namespace CFFA_API.Controllers
         }
 
         private delegate IActionResult ValidationDelegate(ApplicationUser User);
+        private delegate Task<IActionResult> CodeBlockDelegate();
+
+        private async Task<IActionResult> TryCatchLog(CodeBlockDelegate handler)
+        {
+            try
+            {
+                return await handler();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                throw;
+            }
+        }
+
         private async Task<IActionResult> Validation_EmailConfirmation_ModelState(ClaimsPrincipal User, ModelStateDictionary ModelState, ValidationDelegate handler)
         {
-            var user = await userManager.GetUserAsync(User);
-            if (user.EmailConfirmed)
-            {
-                if (ModelState.IsValid)
+            return await TryCatchLog(async () => {
+                var user = await userManager.GetUserAsync(User);
+                if (user.EmailConfirmed)
                 {
-                    return handler(user);
-                }
-                string errorMessage = "";
-                foreach (ModelStateEntry modelState in ModelState.Values)
-                {
-                    foreach (ModelError error in modelState.Errors)
+                    if (ModelState.IsValid)
                     {
-                        errorMessage += error.ErrorMessage + " ";
+                        return handler(user);
                     }
+                    string errorMessage = "";
+                    foreach (ModelStateEntry modelState in ModelState.Values)
+                    {
+                        foreach (ModelError error in modelState.Errors)
+                        {
+                            errorMessage += error.ErrorMessage + " ";
+                        }
+                    }
+                    return Conflict(errorMessage);
                 }
-                return Conflict(errorMessage);
-            }
-            return Conflict("Unconfirmed Email");
+                return Conflict("Unconfirmed Email");
+            });
         }
     }
 }

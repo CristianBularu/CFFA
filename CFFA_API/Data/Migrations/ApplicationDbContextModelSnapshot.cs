@@ -34,7 +34,7 @@ namespace CFFA_API.Data.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 3, 2, 10, 44, 12, 803, DateTimeKind.Utc).AddTicks(4833));
+                        .HasDefaultValue(new DateTime(2020, 6, 8, 19, 51, 39, 322, DateTimeKind.Utc).AddTicks(6355));
 
                     b.Property<int>("CustomTokensId")
                         .HasColumnType("int");
@@ -124,7 +124,7 @@ namespace CFFA_API.Data.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 3, 2, 10, 44, 12, 812, DateTimeKind.Utc).AddTicks(3011));
+                        .HasDefaultValue(new DateTime(2020, 6, 8, 19, 51, 39, 333, DateTimeKind.Utc).AddTicks(5901));
 
                     b.Property<bool?>("NotSoftDeleted")
                         .IsRequired()
@@ -239,7 +239,7 @@ namespace CFFA_API.Data.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 3, 2, 10, 44, 12, 809, DateTimeKind.Utc).AddTicks(3403));
+                        .HasDefaultValue(new DateTime(2020, 6, 8, 19, 51, 39, 330, DateTimeKind.Utc).AddTicks(4777));
 
                     b.Property<string>("Extension")
                         .HasColumnType("nvarchar(max)");
@@ -306,18 +306,6 @@ namespace CFFA_API.Data.Migrations
 
                     b.Property<string>("Extension")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PageCount")
-                        .HasColumnType("int")
-                        .HasMaxLength(4000);
-
-                    b.Property<float>("PageHeight")
-                        .HasColumnType("real");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(89)")
-                        .HasMaxLength(89);
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
