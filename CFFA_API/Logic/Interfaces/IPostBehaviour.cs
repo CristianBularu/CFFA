@@ -33,6 +33,6 @@ namespace CFFA_API.Logic.Interfaces
         List<PostFullViewModel> GetFreshPosts(int pageIndex, ApplicationUser viewer);
         List<PostFullViewModel> GetFeedPosts(ApplicationUser user, int pageIndex);
         bool PostExists(long postId);
-        List<PostOnlyViewModel> Search(string like, int page);
+        Task<List<PostOnlyViewModel>> Search(string like, int page);
     }
 }

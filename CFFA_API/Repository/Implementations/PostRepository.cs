@@ -2,6 +2,7 @@
 using CFFA_API.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 using static CFFA_API.Logic.Helpers.LinqPaginationExtension;
 
 namespace CFFA_API.Repository.Implementations
@@ -114,8 +115,13 @@ namespace CFFA_API.Repository.Implementations
 
         public IQueryable<Post> Search(string like, int pageIndex, int pageSize)
         {
-            return Context.Set<Post>().Where(p => p.Title.Contains(like, System.StringComparison.OrdinalIgnoreCase)).Page(pageIndex, pageSize).AsNoTracking();
+            return Context.Set<Post>().Where(p => p.Title.ToLower().Contains(like.ToLower())).Page(pageIndex, pageSize).AsNoTracking();
         }
+
+        //public async IQueryable<Post> SearchAsync(string like, int pageIndex, int pageSize)
+        //{
+        //    return await Context.Set<Post>().Where(p => p.Title.ToLower().Contains(like.ToLower())).Page(pageIndex, pageSize).AsNoTracking().ToArrayAsync();
+        //}
 
         public IQueryable<Post> GetUserPosts(string UserID, int pageIndex, int pageSize)
         {

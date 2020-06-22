@@ -157,7 +157,7 @@ namespace CFFA_API.Repository.Implementations
 
         public IQueryable<ApplicationUser> Search(string like, int pageIndex, int PageSize)
         {
-            return Context.Set<ApplicationUser>().Where(u => u.FullName.Contains(like, System.StringComparison.OrdinalIgnoreCase)).AsNoTracking();
+            return Context.Set<ApplicationUser>().Where(u => u.FullName.ToLower().Contains(like.ToLower())).AsNoTracking();
         }
     }
 }

@@ -2,6 +2,7 @@
 using CFFA_API.Models;
 using CFFA_API.Models.ViewModels;
 using CFFA_API.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -126,9 +127,9 @@ namespace CFFA_API.Logic.Implementations
             return userRepository.Disable(userId);
         }
 
-        public List<ProfileViewModel> Search(string like, int page)
+        public async Task<List<ProfileViewModel>> Search(string like, int page)
         {
-            var users = userRepository.Search(like, page, UserPostsPageSize).ToList();
+            var users = await userRepository.Search(like, page, UserPostsPageSize).ToListAsync();
             var result = new List<ProfileViewModel>();
             foreach(ApplicationUser user in users)
             {

@@ -19,8 +19,7 @@ namespace CFFA_API.Controllers.Helpers
 
     public class PhotoManager: IPhotoManager
     {
-        private static int smallSize = 100;
-        private static int mediumSize = 500;
+        
         private readonly IWebHostEnvironment hostEnvironment;
         private readonly ILogger logger;
 
@@ -57,16 +56,23 @@ namespace CFFA_API.Controllers.Helpers
                     Directory.CreateDirectory(realDirectoryPath);
                 imageName = string.Concat("o", Path.GetExtension(file.FileName));
                 filePath = Path.Combine(realDirectoryPath, imageName);
-                using (FileStream stream = File.Create(filePath))
-                {
-                    await file.CopyToAsync(stream);
+                FileStream stream = File.Create(filePath);
+                
+                await file.CopyToAsync(stream);
                     
-                    var original = new Bitmap(stream);
-                    stream.Flush();
-                    var height = original.Height;
-                    var width = original.Width;
-                    new Thread(() =>
+                new Thread(() =>
+                {
+                    try
                     {
+
+                        var original = new Bitmap(stream);
+                        //stream.Flush();
+                        var height = original.Height;
+                        var width = original.Width;
+
+                        int smallSize = 100;
+                        int mediumSize = 500;
+                        //make sure the image is bigger than the resizes, else change resize scale
                         if (smallSize > height || smallSize > width)
                         {
                             smallSize = Math.Min(height, width);
@@ -81,19 +87,28 @@ namespace CFFA_API.Controllers.Helpers
                         else
                             finalSmall = new Bitmap(original, smallSize, smallSize * height / width);
                         finalSmall.Save(Path.Combine(realDirectoryPath, string.Concat("s", Path.GetExtension(file.FileName))));
-
+                        
                         Bitmap finalMedium;
                         if (height < width)
                             finalMedium = new Bitmap(original, mediumSize * width / height, mediumSize);
                         else
                             finalMedium = new Bitmap(original, mediumSize, mediumSize * height / width);
                         finalMedium.Save(Path.Combine(realDirectoryPath, string.Concat("m", Path.GetExtension(file.FileName))));
-                    })
+                    }
+                    catch (Exception ex)
                     {
-                        Priority = ThreadPriority.BelowNormal,
-                        IsBackground = true
-                    }.Start();
-                }
+                        logger.LogError(ex, ex.Message);
+                    }
+                    finally
+                    {
+                        stream.Dispose();
+                    }
+                })
+                {
+                    //Priority = ThreadPriority.BelowNormal,
+                    IsBackground = true
+                }.Start();
+
                 return Path.GetExtension(file.FileName);
             }
             catch (Exception ex)

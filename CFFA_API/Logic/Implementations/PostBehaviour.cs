@@ -5,10 +5,12 @@ using CFFA_API.Models.ViewModels;
 using CFFA_API.Models.ViewModels.Creational;
 using CFFA_API.Repository.Interfaces;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using static CFFA_API.Logic.Helpers.MapperExtensions;
 
 namespace CFFA_API.Logic.Implementations
@@ -263,9 +265,10 @@ namespace CFFA_API.Logic.Implementations
             return viewModel;
         }
 
-        public List<PostOnlyViewModel> Search(string like, int page)
+        public async Task<List<PostOnlyViewModel>> Search(string like, int page)
         {
-            var posts = _postRepository.Search(like, page, pageSize).ToList();
+            var posts = _postRepository.Search(like, page, pageSize).AsEnumerable();
+            var pst = await _postRepository.Search(like, page, pageSize).ToListAsync();
             var result = new List<PostOnlyViewModel>();
             foreach (Post post in posts)
             {

@@ -21,6 +21,6 @@ namespace CFFA_API.Logic.Interfaces
         void ClearTokenNoUpdate(CustomTokens tokens);
         void GenerateConfirmationTokenNoUpdate(CustomTokens tokens);
         bool ChangeProfilePhotoPath(ApplicationUser user, string ext);
-        List<ProfileViewModel> Search(string like, int page);
+        Task<List<ProfileViewModel>> Search(string like, int page);
     }
 }

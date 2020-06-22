@@ -95,7 +95,7 @@ namespace CFFA_API.Controllers
             return await TryCatchLog(async () => {
                 if (page < 1)
                     page = 1;
-                var posts = postBehaviour.Search(like, page);
+                var posts = await postBehaviour.Search(like, page - 1);
                 return Ok(posts);
             });
         }
@@ -106,7 +106,7 @@ namespace CFFA_API.Controllers
             return await TryCatchLog(async () => {
                 if (page < 1)
                     page = 1;
-                var posts = userBehavior.Search(like, page);
+                var posts = await userBehavior.Search(like, page - 1);
                 return Ok(posts);
             });
         }
