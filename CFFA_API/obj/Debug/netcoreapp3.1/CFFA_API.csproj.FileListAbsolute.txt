@@ -147,11 +147,6 @@ C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\nlog.config
 C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\NLog.dll
 C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
 C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
-C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
-C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Dev\Desktop\CFFA\CFFA_API\obj\Debug\netcoreapp3.1\CFFA_API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Dev\Desktop\CFFA\CFFA_API\obj\Debug\netcoreapp3.1\CFFA_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Algorithm.dll
@@ -317,3 +312,10 @@ C:\Users\Dev\Desktop\Project\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Syncfusion.Li
 C:\Users\Dev\Desktop\Project\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
 C:\Users\Dev\Desktop\Project\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Dev\Desktop\Project\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
+C:\Users\Dev\Desktop\CFFA\CFFA_API\obj\Debug\netcoreapp3.1\CFFA_API.csproj.CoreCompileInputs.cache
+C:\Users\Dev\Desktop\CFFA\CFFA_API\obj\Debug\netcoreapp3.1\CFFA_API.genruntimeconfig.cache
+C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Dev\Desktop\CFFA\CFFA_API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll

@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {}
+    "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
+    "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj",
         "projectName": "Algorithm",
-        "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectPath": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\obj\\",
+        "outputPath": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -70,7 +67,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

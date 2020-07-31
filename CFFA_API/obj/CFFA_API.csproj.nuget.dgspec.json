@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj": {}
+    "C:\\Users\\Dev\\Desktop\\CFFA\\CFFA_API\\CFFA_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
+    "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj",
         "projectName": "Algorithm",
-        "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj",
+        "projectPath": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\obj\\",
+        "outputPath": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -70,22 +67,19 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj": {
+    "C:\\Users\\Dev\\Desktop\\CFFA\\CFFA_API\\CFFA_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj",
+        "projectUniqueName": "C:\\Users\\Dev\\Desktop\\CFFA\\CFFA_API\\CFFA_API.csproj",
         "projectName": "CFFA_API",
-        "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\CFFA_API.csproj",
+        "projectPath": "C:\\Users\\Dev\\Desktop\\CFFA\\CFFA_API\\CFFA_API.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\CFFA_API\\obj\\",
+        "outputPath": "C:\\Users\\Dev\\Desktop\\CFFA\\CFFA_API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -100,8 +94,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj": {
-                "projectPath": "C:\\Users\\Dev\\Desktop\\Project\\CFFA\\Algorithm\\Algorithm.csproj"
+              "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj": {
+                "projectPath": "C:\\Users\\Dev\\Desktop\\CFFA\\Algorithm\\Algorithm.csproj"
               }
             }
           }
@@ -121,33 +115,33 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[5.6.0, )"
+              "version": "[6.7.1, )"
             },
             "Microsoft.NETCore.App": {
               "target": "Package",
@@ -155,23 +149,23 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.3, )"
             },
             "NLog.Web.AspNetCore": {
               "target": "Package",
-              "version": "[4.9.0, )"
+              "version": "[4.9.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.5.1, )"
             },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.5.1, )"
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.5.1, )"
             },
             "Swashbuckle.Core": {
               "target": "Package",
@@ -183,7 +177,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[5.6.0, )"
+              "version": "[6.7.1, )"
             }
           },
           "imports": [
@@ -204,7 +198,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

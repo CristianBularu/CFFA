@@ -15,7 +15,7 @@ namespace CFFA_API.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.2")
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -34,7 +34,7 @@ namespace CFFA_API.Data.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 6, 8, 19, 51, 39, 322, DateTimeKind.Utc).AddTicks(6355));
+                        .HasDefaultValue(new DateTime(2020, 7, 26, 9, 11, 42, 116, DateTimeKind.Utc).AddTicks(5573));
 
                     b.Property<int>("CustomTokensId")
                         .HasColumnType("int");
@@ -124,7 +124,7 @@ namespace CFFA_API.Data.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 6, 8, 19, 51, 39, 333, DateTimeKind.Utc).AddTicks(5901));
+                        .HasDefaultValue(new DateTime(2020, 7, 26, 9, 11, 42, 121, DateTimeKind.Utc).AddTicks(7993));
 
                     b.Property<bool?>("NotSoftDeleted")
                         .IsRequired()
@@ -239,7 +239,7 @@ namespace CFFA_API.Data.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 6, 8, 19, 51, 39, 330, DateTimeKind.Utc).AddTicks(4777));
+                        .HasDefaultValue(new DateTime(2020, 7, 26, 9, 11, 42, 120, DateTimeKind.Utc).AddTicks(674));
 
                     b.Property<string>("Extension")
                         .HasColumnType("nvarchar(max)");
