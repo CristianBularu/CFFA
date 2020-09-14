@@ -165,6 +165,8 @@ namespace CFFA_API.Controllers
                 } catch (Exception ex)
                 {
                     logger.LogError(ex.Message);
+                    //throw;
+                    return StatusCode(500, "Some internal error wich will not be shown here but will be logged");
                 }
             }
             return ConflictFromModelState(ModelState);

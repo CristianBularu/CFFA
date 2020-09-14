@@ -90,7 +90,7 @@ namespace CFFA_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SearchPosts(string like, int page = 1)
+        public async Task<IActionResult> SearchPosts(string like = "", int page = 1)
         {
             return await TryCatchLog(async () => {
                 if (page < 1)
@@ -101,7 +101,7 @@ namespace CFFA_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SearchUsers(string like, int page = 1)
+        public async Task<IActionResult> SearchUsers(string like = "", int page = 1)
         {
             return await TryCatchLog(async () => {
                 if (page < 1)
@@ -124,7 +124,8 @@ namespace CFFA_API.Controllers
             catch (Exception ex)
             {
                 logger.LogError(ex.Message);
-                throw;
+                //throw;
+                return StatusCode(500, "Some internal error wich will not be shown here but will be logged");
             }
         }
     }
